@@ -177,7 +177,7 @@ int mgcCopy(std::string sourceDirName, std::string targetDirName) {
         std::cout << "\tTarget subdirectory path: \"" << targetSubDirName << "\"" << std::endl;
         std::filesystem::create_directories(targetSubDirPath);
 
-        std::string targetfilename = dir_entry.path().filename();
+        std::string targetfilename = dir_entry.path().filename().string();
         std::filesystem::path targetFilePath{targetSubDirName + "/" + targetfilename};
         
         // Copy source file into new subdirectory
